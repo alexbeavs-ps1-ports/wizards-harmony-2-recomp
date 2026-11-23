@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Wizard's Harmony 2"
+id = "SLPS-00984"
+players = 1
+exe = "disc/SLPS_009.84"
+disc = "disc/Wizard's Harmony 2 (Japan, Asia).cue"
+discs = ["disc/Wizard's Harmony 2 (Japan, Asia).cue"]
+disc_serials = ["SLPS-00984"]
+load_address = "0x80010000"
+entry_pc = "0x800246A8"
+text_size = "0x00070800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Wizard's Harmony 2 (Japan, Asia) (Track 1).bin"
+cue_name = "Wizard's Harmony 2 (Japan, Asia).cue"
+boot_exe = "SLPS_009.84"
+known_sizes = [436794624]
+known_md5 = [
+  "066c5ef8978616db4960a90036195464",
+]
+known_sha1 = [
+  "6f7ac6f421a05585267b0071b24f058a10f4a3aa",
+]
+known_crc32 = [
+  "8cd60776",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5500.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Wizard's Harmony 2 Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 4
+required_disc_fp = "94879d068c1a018bc7ae18fefd393af6e0741543bc6074843c83ea6454f111fa"

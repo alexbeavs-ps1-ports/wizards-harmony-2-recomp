@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Wizard's Harmony 2",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "wizards-harmony-2-recomp",
+  "original": {
+    "region": "Japan",
+    "serial": "SLPS-00984"
+  }
+}
